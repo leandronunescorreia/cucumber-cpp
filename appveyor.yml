@@ -48,8 +48,8 @@ notifications:
 
 after_build:
   - cd C:/projects/cucumber-cpp
-  - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/deploy-%APPVEYOR_BUILD_VERSION%-%COMPILER%.zip" .\build\*
+  - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/deploy-%APPVEYOR_BUILD_VERSION%-%generator%-%platform%.zip" .\build\*
 
 artifacts:
-- path: deploy-%APPVEYOR_BUILD_VERSION%-%COMPILER%.zip
+- path: deploy-%APPVEYOR_BUILD_VERSION%-%generator%-%platform%.zip
   name: builds
