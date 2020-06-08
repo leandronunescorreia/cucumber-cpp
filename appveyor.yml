@@ -45,3 +45,11 @@ notifications:
   on_build_success: false
   on_build_failure: true
   on_build_status_changed: true
+
+after_build:
+  - cd C:/projects/cucumber-cpp
+  - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/deploy-%APPVEYOR_BUILD_VERSION%-%COMPILER%.zip" .\build\*
+
+artifacts:
+- path: C:/projects/cucumber-cpp/*.zip
+  name: builds
