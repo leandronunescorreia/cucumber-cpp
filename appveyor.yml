@@ -51,5 +51,5 @@ after_build:
   - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/deploy-%APPVEYOR_BUILD_VERSION%-%COMPILER%.zip" .\build\*
 
 artifacts:
-- path: C:/projects/cucumber-cpp/*.zip
+- path: *.zip
   name: builds
