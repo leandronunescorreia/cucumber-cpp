@@ -39,6 +39,7 @@ after_test:
 - for /r %%v in (TEST-*.xml) do curl -s -F "file=@%%v;filename=%%~nxv" https://ci.appveyor.com/api/testresults/junit/%APPVEYOR_JOB_ID%
   - cd C:/Program Files (x86)/
   - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/deployed-%APPVEYOR_BUILD_VERSION%-%MSVC_ARCH%.zip" .\Cucumber-Cpp\*
+  - cd C:/projects/cucumber-cpp/
   
 notifications:
 - provider: Email
@@ -52,6 +53,7 @@ after_build:
   - cd C:/projects/
   - dir
   - 7z a -tzip -mx9 "C:/projects/cucumber-cpp/project-%APPVEYOR_BUILD_VERSION%-%MSVC_ARCH%.zip" .\cucumber-cpp\*
+  - cd C:/projects/cucumber-cpp/
 
 artifacts:
 - path: deployed-%APPVEYOR_BUILD_VERSION%-%MSVC_ARCH%.zip
